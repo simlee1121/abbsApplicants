@@ -1,3 +1,11 @@
+(Here is the video link for the CRUD https://www.youtube.com/watch?v=aM2HILJxK98
+
+First, I will show you some data from the API. Since I am using a fake API for testing purposes, I cannot perform CRUD operations through the API.
+
+Second, I will demonstrate the CRUD operations. I am utilizing 'localStorage' to perform CRUD operations.
+
+I am using a mock API for testing, the software that I use = 'Mockoon'.)
+
 1. ng new abbsApplicants --no-standalone (Because I am using angular 17, So I add in --no-standalone)
 2. ng generate module home
 3. ng generate component home --module=home
