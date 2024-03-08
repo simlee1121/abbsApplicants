@@ -14,11 +14,27 @@ export class ApplicantListComponent implements OnInit {
   constructor(private applicantService: ApplicantService){}
 
   ngOnInit(): void {
-    this.applicants = this.applicantService.getApplicants();
+    this.loadApplicants();
   }
 
-  deleteReservation(id: string){
-    this.applicantService.deleteApplicant(id);
+  loadApplicants(): void {
+    this.applicantService.getApplicants().subscribe(applicants => {
+      this.applicants = applicants;
+    });
   }
+
+  deleteApplicant(id: string){
+    this.applicantService.deleteApplicant(id);
+
+    this.loadApplicants();
+  }
+
+  // ngOnInit(): void {
+  //   this.applicants = this.applicantService.getApplicants();
+  // }
+
+  // deleteApplicant(id: string){
+  //   this.applicantService.deleteApplicant(id);
+  // }
 
 }

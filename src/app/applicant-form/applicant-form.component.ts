@@ -42,16 +42,16 @@ export class ApplicantFormComponent implements OnInit {
   onSubmit() {
     if(this.applicantForm.valid){
 
-      let reservation: Applicant = this.applicantForm.value;
+      let applicant: Applicant = this.applicantForm.value;
 
       let id = this.activatedRoute.snapshot.paramMap.get('id')
 
       if(id){
         // Update
-        this.applicantService.updateApplicant(id, reservation)
+        this.applicantService.updateApplicant(id, applicant)
       } else {
         // New
-        this.applicantService.addApplicant(reservation)   
+        this.applicantService.addApplicant(applicant)   
 
       }
 
