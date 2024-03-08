@@ -1,27 +1,16 @@
-# AbbsApplicants
+1. ng new abbsApplicants --no-standalone (Because I am using angular 17, So I add in --no-standalone)
+2. ng generate module home
+3. ng generate component home --module=home
+4. ng generate module applicant
+5. ng generate component applicant-form --module=applicant
+6. ng generate component applicant-list --module=applicant
+7. ng generate service applicant/applicant (I created the service called applicant inside the applicant module.)
+8. ng generate i models/applicant (I created the interface called applicant inside the models folder.)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
 
-## Development server
+- Any new module created needs to be added to app.module.ts.
+- I modified the URL link inside the app-routing.module.ts.
+- For the home folder, you can think of it as home or header as well.
+- I created the CRUD functions/methods inside applicant.service.ts so that I can use them in the applicant-form and applicant-list components.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![](1.png)

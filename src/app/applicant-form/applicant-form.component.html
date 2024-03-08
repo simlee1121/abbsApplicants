@@ -1,0 +1,44 @@
+<app-home></app-home>
+
+<h3 class="container mt-5 mb-3">Create a new applicant</h3>
+
+<form class="container mb-5" [formGroup]="applicantForm" (ngSubmit)="onSubmit()">
+
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Name:</label>
+            <input class="form-control" type="text" formControlName="Name">
+            <small class="text-danger" *ngIf="applicantForm.get('Name')?.invalid && applicantForm.get('Name')?.touched">
+                Name is required.
+            </small>
+        </div>
+
+        <div class="col">
+            <label class="form-label">Email:</label>
+            <input class="form-control" type="email" formControlName="Email">
+            <small class="text-danger" *ngIf="applicantForm.get('Email')?.invalid && applicantForm.get('Email')?.touched">
+                Email is required.
+            </small>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Interview Date:</label>
+            <input class="form-control" type="date" formControlName="interviewDate">
+            <small class="text-danger" *ngIf="applicantForm.get('interviewDate')?.invalid && applicantForm.get('interviewDate')?.touched">
+                Check-In Date is required.
+            </small>
+        </div>
+
+        <div class="col">
+            <label class="form-label">age:</label>
+            <input class="form-control" type="number" formControlName="age">
+            <small class="text-danger" *ngIf="applicantForm.get('age')?.invalid && applicantForm.get('age')?.touched">
+                Age is required.
+            </small>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="applicantForm.invalid">Submit</button>
+</form>
